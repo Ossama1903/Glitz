@@ -3,21 +3,11 @@ import TaskList from "./components/Tasklist";
 import Box from "@mui/material/Box";
 import "./styles/utility.css";
 import NewTaskInput from "./components/NewTaskInput";
-// const uuidv4 = require("uuid/v4");
 import { v4 as uuidv4 } from "uuid";
 
 function App() {
   //STATE VARIABLES
-  const [taskList, setTaskList] = useState([
-    {
-      id: uuidv4(),
-      name: "First Task",
-    },
-    {
-      id: uuidv4(),
-      name: "Second Task",
-    },
-  ]);
+  const [taskList, setTaskList] = useState([]);
 
   //CUSTOM FUNCTIONS
   const addTask = (passedName) => {
@@ -31,11 +21,10 @@ function App() {
           width: "100%",
           maxWidth: 360,
           bgcolor: "background.paper",
-          margin: "0 auto",
-          border: "1px solid black",
+          margin: "10rem auto",
         }}
       >
-        <NewTaskInput addNewTask={addTask} />
+        <NewTaskInput tasks={taskList} addNewTask={addTask} />
         <TaskList tasks={taskList} />
       </Box>
     </>

@@ -1,29 +1,28 @@
 import { useState } from "react";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
+import AddIcon from "@mui/icons-material/Add";
+import { v4 as uuidv4 } from "uuid";
 
-export default function NewTaskInput() {
+export default function NewTaskInput({ tasks, addNewTask }) {
   const [input, setInput] = useState();
-
   return (
-    <Box
-      component="form"
-      sx={{
-        "& > :not(style)": {
-          m: 1,
-          width: "80%",
-        },
-      }}
-      noValidate
-      autoComplete="off"
-    >
+    <>
       <TextField
-        style={{ marginLeft: "2rem" }}
+        style={{ marginLeft: "2rem", width: "75%" }}
         id="standard-basic"
         label="ADD TASK"
         variant="standard"
         onChange={(e) => setInput(e.target.value)}
       />
-    </Box>
+      <AddIcon
+        onClick={() => addNewTask(input)}
+        style={{
+          fontSize: "1.9rem",
+          color: "green",
+          marginTop: "1.3rem",
+          marginLeft: "0.8rem",
+        }}
+      />
+    </>
   );
 }
