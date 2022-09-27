@@ -1,6 +1,8 @@
 import { useState } from "react";
 import TaskList from "./components/Tasklist";
+import Box from "@mui/material/Box";
 import "./styles/utility.css";
+import NewTaskInput from "./components/NewTaskInput";
 
 function App() {
   const [taskInput, setTaskInput] = useState("");
@@ -11,7 +13,18 @@ function App() {
 
   return (
     <>
-      <TaskList tasks={taskList} />
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: 360,
+          bgcolor: "background.paper",
+          margin: "0 auto",
+          border: "1px solid black",
+        }}
+      >
+        <NewTaskInput />
+        <TaskList tasks={taskList} />
+      </Box>
     </>
   );
 }
