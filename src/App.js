@@ -14,6 +14,11 @@ function App() {
     setTaskList([...taskList, { id: uuidv4(), name: passedName }]);
   };
 
+  const removeTask = (passedId) => {
+    const finalizedList = taskList.filter((task) => task.id !== passedId);
+    setTaskList(finalizedList);
+  };
+
   return (
     <>
       <Box
@@ -25,7 +30,19 @@ function App() {
         }}
       >
         <NewTaskInput tasks={taskList} addNewTask={addTask} />
-        <TaskList tasks={taskList} />
+        {taskList.length === 0 && (
+          <h1
+            style={{
+              textAlign: "center",
+              color: "red",
+              fontFamily: "sans-serif",
+              marginTop: "2rem",
+            }}
+          >
+            NO TASKS ADDED
+          </h1>
+        )}
+        <TaskList tasks={taskList} removeTask={removeTask} />
       </Box>
     </>
   );
