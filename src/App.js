@@ -20,31 +20,22 @@ function App() {
   };
 
   return (
-    <>
-      <Box
-        sx={{
-          width: "100%",
-          maxWidth: 360,
-          bgcolor: "background.paper",
-          margin: "10rem auto",
-        }}
-      >
-        <NewTaskInput tasks={taskList} addNewTask={addTask} />
-        {taskList.length === 0 && (
-          <h1
-            style={{
-              textAlign: "center",
-              color: "red",
-              fontFamily: "sans-serif",
-              marginTop: "2rem",
-            }}
-          >
-            NO TASKS ADDED
-          </h1>
-        )}
-        <TaskList tasks={taskList} removeTask={removeTask} />
-      </Box>
-    </>
+    <div style={{ width: "80%", margin: "0 auto" }}>
+      <NewTaskInput tasks={taskList} addNewTask={addTask} />
+      {taskList.length === 0 && (
+        <h1
+          style={{
+            textAlign: "center",
+            color: "red",
+            fontFamily: "sans-serif",
+            marginTop: "2rem",
+          }}
+        >
+          NO TASKS ADDED
+        </h1>
+      )}
+      <TaskList tasks={taskList} removeTask={removeTask} />
+    </div>
   );
 }
 
