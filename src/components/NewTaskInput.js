@@ -15,7 +15,9 @@ export default function NewTaskInput({ tasks, addNewTask }) {
         onChange={(e) => setInput(e.target.value)}
       />
       <AddIcon
-        onClick={() => addNewTask(input)}
+        onClick={() => {
+          addNewTask(input);
+        }}
         style={{
           fontSize: "1.9rem",
           color: "green",

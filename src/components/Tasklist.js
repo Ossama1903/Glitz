@@ -7,22 +7,23 @@ import ListItemText from "@mui/material/ListItemText";
 import Checkbox from "@mui/material/Checkbox";
 import DeleteRoundedIcon from "@mui/icons-material/DeleteRounded";
 
-export default function TaskList({ tasks }) {
+export default function TaskList({ tasks, removeTask }) {
   return (
     <nav aria-label="secondary mailbox folders">
       <List>
         {tasks.map((task) => (
-          <>
-            <ListItem disablePadding>
-              <ListItemButton>
-                <ListItemIcon>
-                  <Checkbox />
-                </ListItemIcon>
-                <ListItemText primary={task.name} />
-                <DeleteRoundedIcon style={{ color: "red" }} />
-              </ListItemButton>
-            </ListItem>
-          </>
+          <ListItem id={task.id} disablePadding>
+            <ListItemButton>
+              <ListItemIcon>
+                <Checkbox />
+              </ListItemIcon>
+              <ListItemText primary={task.name} />
+              <DeleteRoundedIcon
+                onClick={() => removeTask(task.id)}
+                style={{ color: "red" }}
+              />
+            </ListItemButton>
+          </ListItem>
         ))}
       </List>
     </nav>
