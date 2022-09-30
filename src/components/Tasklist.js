@@ -12,7 +12,15 @@ export default function TaskList({ tasks, removeTask }) {
     <nav aria-label="secondary mailbox folders">
       <List>
         {tasks.map((task) => (
-          <ListItem id={task.id} disablePadding>
+          <ListItem
+            style={{
+              marginBlock: "1rem",
+              boxShadow:
+                "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
+            }}
+            id={task.id}
+            disablePadding
+          >
             <ListItemButton>
               <ListItemIcon>
                 <Checkbox />

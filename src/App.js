@@ -1,6 +1,5 @@
 import { useState } from "react";
 import TaskList from "./components/Tasklist";
-import Box from "@mui/material/Box";
 import "./styles/utility.css";
 import NewTaskInput from "./components/NewTaskInput";
 import { v4 as uuidv4 } from "uuid";
@@ -31,7 +30,7 @@ function App() {
             marginTop: "2rem",
           }}
         >
-          NO TASKS ADDED
+          NO TASKS DUE. WOOHOO!
         </h1>
       )}
       <TaskList tasks={taskList} removeTask={removeTask} />
