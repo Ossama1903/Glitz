@@ -11,6 +11,12 @@ const addTask = async (req, res) => {
   }
 };
 
+const retrieveTasks = async (req, res) => {
+  const tasks = await Task.find();
+  res.json({ tasks });
+};
+
 module.exports = {
   addTask,
+  retrieveTasks,
 };
