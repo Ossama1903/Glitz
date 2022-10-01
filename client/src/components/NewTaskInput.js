@@ -30,7 +30,7 @@ export default function NewTaskInput({ tasks, addNewTask }) {
           border: "none",
         }}
         onClick={() => {
-          if (input.length !== 0) {
+          if (input) {
             addNewTask(input);
           }
         }}

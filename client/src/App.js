@@ -3,6 +3,7 @@ import TaskList from "./components/Tasklist";
 import "./styles/utility.css";
 import NewTaskInput from "./components/NewTaskInput";
 import { v4 as uuidv4 } from "uuid";
+import { createTask } from "./api-calls/task-apis";
 
 function App() {
   //STATE VARIABLES
@@ -10,7 +11,8 @@ function App() {
 
   //CUSTOM FUNCTIONS
   const addTask = (passedName) => {
-    setTaskList([...taskList, { id: uuidv4(), name: passedName }]);
+    createTask(passedName);
+    //setTaskList([...taskList, { id: uuidv4(), name: passedName }]);
   };
 
   const removeTask = (passedId) => {
