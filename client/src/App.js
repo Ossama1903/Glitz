@@ -2,7 +2,6 @@ import { useState } from "react";
 import TaskList from "./components/Tasklist";
 import "./styles/utility.css";
 import NewTaskInput from "./components/NewTaskInput";
-import { v4 as uuidv4 } from "uuid";
 import { createTask } from "./api-calls/task-apis";
 
 function App() {

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+//GLOBAL VARIABLES
 const serverURL = "http://localhost:5000";
 
 const createTask = (name) => {
